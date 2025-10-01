@@ -1,0 +1,13 @@
+target/
+project/project/
+project/target/
+.metals/
+.bloop/
+.idea/
+.vscode/
+*.iml
+spark-warehouse/
+.derby/
+*.log
+.DS_Store
+Thumbs.db
