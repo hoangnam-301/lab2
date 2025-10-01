@@ -50,20 +50,15 @@
 ---
 
 ## 4) Difficulties encountered & solutions (khó khăn & cách giải quyết)
-- **PATH_NOT_FOUND** khi đọc dữ liệu: do dùng đường dẫn tương đối `../data/...` nên Spark tìm tới `C:\Users\fpt\data\...` không có file.  
-  **Cách khắc phục**: đặt file đúng vị trí `C:\Users\fpt\data\c4-train.00000-of-01024-30K.json.gz` *hoặc* sửa `dataPath` cho khớp thư mục chứa dữ liệu.
-- **Nhiều dòng “đỏ” trong console**: sbt gắn prefix `[error]` cho luồng `stderr` của tiến trình con, dù nội dung Spark là **INFO/WARN** hợp lệ; job vẫn kết thúc với **exitCode 0**.  
-  **Cách giảm ồn** (tùy chọn): gọi `spark.sparkContext.setLogLevel("WARN")` sau khi tạo SparkSession, hoặc thêm `src/main/resources/log4j2.properties` để hạ mức log.
+
 
 ---
 
 ## 5) References (tài liệu tham khảo)
 - Apache Spark ML: **Tokenizer**, **RegexTokenizer**, **StopWordsRemover**, **HashingTF**, **IDF**, **Pipeline** (tài liệu chính thức).
-- Spark UI (`http://localhost:4040`) để quan sát DAG/stages khi thực thi.
 
 
 ---
 
 ## 6) Pre-trained models (nếu dùng)
-- **Không sử dụng** mô hình pre-trained trong phiên bản nộp này. Pipeline dừng ở TF-IDF; không huấn luyện hay tải mô hình ngoài.  
-- (Mở rộng – không thuộc bản nộp gốc): có thể thêm `LogisticRegression` (không pre-trained) hoặc thay TF-IDF bằng `Word2Vec` để tạo embedding.
+- Em không sử dụng pre-trained models trong bài này.
