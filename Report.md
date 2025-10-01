@@ -50,13 +50,21 @@
 ---
 
 ## 4) Difficulties encountered & solutions (khó khăn & cách giải quyết)
+**Thời gian/ bộ nhớ tăng khi mở rộng dữ liệu**  
+- **Vấn đề**: Bỏ `limit(1000)` có thể chậm hoặc tốn RAM.  
+- **Cách xử lý**:  
+  - Giữ `limit` khi làm lab; tăng dần nếu cần.  
+  - (Tùy chọn) tăng driver memory hoặc bỏ cache không cần thiết.
 
+**Va chạm băm khi vocab lớn**  
+- **Vấn đề**: Vocab sau tiền xử lý ~31k, trong khi HashingTF dùng 20k chiều → có thể collision.  
+- **Cách xử lý**:  
+  - Tăng `numFeatures` (ví dụ `262144`) hoặc cân nhắc `CountVectorizer`/`Word2Vec` (ngoài phạm vi bản nộp gốc).
 
 ---
 
 ## 5) References (tài liệu tham khảo)
 - Apache Spark ML: **Tokenizer**, **RegexTokenizer**, **StopWordsRemover**, **HashingTF**, **IDF**, **Pipeline** (tài liệu chính thức).
-
 
 ---
 
